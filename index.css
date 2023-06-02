@@ -911,6 +911,28 @@ html:has(.popup_opened) {
   aspect-ratio: 356 / 279;
 }
 
+.custom-aspect-ratio {
+  position: relative;
+}
+
+.custom-aspect-ratio::before {
+  --aspect-ratio: 279 / 356;
+  float: left;
+  padding-top: calc(100%/(var(--aspect-ratio)));
+  content: '';
+}
+.custom-aspect-ratio::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.custom-aspect-ratio > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .expert__photo {
   display: block;
   object-fit: cover;
