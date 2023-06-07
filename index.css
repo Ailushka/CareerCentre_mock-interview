@@ -78,9 +78,9 @@ html:has(.popup_opened) {
 
 .site-title {
   font-weight: 400;
-  font-size: 46px;
+  font-size: 52px;
   line-height: 110%;
-  letter-spacing: -1.3px;
+  letter-spacing: -1px;
   font-feature-settings: 'pnum' on, 'lnum' on;
   padding: 0;
   margin: 0;
@@ -414,20 +414,22 @@ html:has(.popup_opened) {
 
 /* Offer */
 
-.offer__content {
+.offer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 5px;
-  padding: 25px 30px 60px 40px;
-  box-sizing: border-box;
+  gap: 6px;
+  margin-bottom: 12px;
 }
 
-.offer__info {
-  width: calc(590/1160 *100%);
-  padding-top: 54px;
+.offer__content {
+  background: var(--clr-white);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: calc(674/1160 *100%);
+  padding: 58px 40px;
+  box-sizing: border-box;
 }
 
 .offer__title {
@@ -435,12 +437,9 @@ html:has(.popup_opened) {
 }
 
 .offer__subtitle {
+  color: #878787;
   margin-bottom: 54px;
   max-width: 500px;
-}
-
-.offer__image-container {
-  width: calc(560/1160 *100%);
 }
 
 .offer__image {
@@ -448,8 +447,9 @@ html:has(.popup_opened) {
   display: block;
   max-width: 100%;
   width: 100%;
-  height: auto;
+  height:100%;
   margin: auto;
+  border-radius: 12px;
 }
 
 @media (max-width: 992px) {
@@ -462,31 +462,27 @@ html:has(.popup_opened) {
 }
 
 @media (max-width: 768px) {
-  .offer__content {
-    justify-content: center;
+  .offer {
+    flex-wrap: wrap;
   }
-  .offer__info {
-    width: 80%;
-    padding-top: 0;
-    order: 1;
+  .offer__content {
+    max-width: 100%;
   }
   .offer__image-container {
-    width: 80%;
-  }
-  .offer__image {
-    margin-bottom: 16px;
+    width: 100%;
   }
 }
 
 @media (max-width: 540px) {
+  .offer {
+    margin-bottom: 8px;
+  }
   .offer__content {
-    padding: 12px 12px 20px;
+    padding: 20px 12px;
+    border-radius: 5px;
   }
-  .offer__info {
-    width: 100%;
-  }
-  .offer__image-container {
-    width: 87%;
+  .offer__image {
+    border-radius: 5px;
   }
 }
 
